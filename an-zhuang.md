@@ -1,113 +1,21 @@
-<style>
-  .tab-hidden {
-    display: none;
-  }
-</style>
-
 #安装
 
-React是一项灵活的技术，它能被应用到一系列的项目中. 你可以用它创建新的应用，You can create new apps with it, but you can also gradually introduce it into an existing codebase without doing a rewrite.
+React是一项灵活的技术，它能被应用到一系列的项目中. 你可以用它创建新的应用，也可以不需要重写就能逐步地将它引入到已有的代码库中。
 
-<div class="toggler">
-  <style>
-    .toggler li {
-       display: inline-block;
-       position: relative;
-       top: 1px;
-       padding: 10px;
-       margin: 0px 2px 0px 2px;
-       border: 1px solid #05A5D1;
-       border-bottom-color: transparent;
-       border-radius: 3px 3px 0px 0px;
-       color: #05A5D1;
-       background-color: transparent;
-       font-size: 0.99em;
-       cursor: pointer;
-    }
-    .toggler li:first-child {
-      margin-left: 0;
-    }
-    .toggler li:last-child {
-      margin-right: 0;
-    }
-    .toggler ul {
-      display: inline-block;
-      list-style-type: none;
-      margin: 0;
-      border-bottom: 1px solid #05A5D1;
-      cursor: default;
-    }
-    @media screen and (max-width: 960px) {
-      .toggler li,
-      .toggler li:first-child,
-      .toggler li:last-child {
-        display: block;
-        border-bottom-color: #05A5D1;
-        border-radius: 3px;
-        margin: 2px 0px 2px 0px;
-      }
-      .toggler ul {
-        border-bottom: 0;
-      }
-    }
-    .display-target-fiddle .toggler .button-fiddle:focus,
-    .display-target-newapp .toggler .button-newapp:focus,
-    .display-target-existingapp .toggler .button-existingapp:focus {
-      background-color: #046E8B;
-      color: white;
-    }
-    .display-target-fiddle .toggler .button-fiddle,
-    .display-target-newapp .toggler .button-newapp,
-    .display-target-existingapp .toggler .button-existingapp {
-      background-color: #05A5D1;
-      color: white;
-    }
-    block {
-      display: none;
-    }
-    .display-target-fiddle .fiddle,
-    .display-target-newapp .newapp,
-    .display-target-existingapp .existingapp {
-      display: block;
-    }
-  </style>
-  <script>
-    document.querySelector('.toggler').parentElement.className += ' display-target-fiddle';
-  </script>
-  <span>Which of these options best describes what you want to do?</span>
-  <br />
-  <br />
-   <ul role="tablist" >
-      <li id="fiddle" class="button-fiddle" aria-selected="false" role="tab" tabindex="0" aria-controls="fiddletab"
-          onclick="display('target', 'fiddle')" onkeyup="keyToggle(event, 'fiddle', 'existingapp', 'newapp')">
-        Try React
-      </li>
-      <li id="newapp" class="button-newapp" aria-selected="false" role="tab" tabindex="-1" aria-controls="newapptab"
-          onclick="display('target', 'newapp')" onkeyup="keyToggle(event, 'newapp', 'fiddle', 'existingapp')">
-        Create a New App
-      </li>
-      <li id="existingapp" class="button-existingapp" aria-selected="false" role="tab" tabindex="-1" aria-controls="existingapptab"
-          onclick="display('target', 'existingapp')" onkeyup="keyToggle(event, 'existingapp', 'newapp', 'fiddle')">
-        Add React to an Existing App
-      </li>
-    </ul>
-</div>
+以下有三个场景，你可以根据你想要做的事选择不同的方式安装与实践：
 
-<block id="fiddletab" role="tabpanel" class="fiddle"  />
+## 尝试React
 
-## Trying Out React
+如果你仅仅有兴趣玩一下React，你可以使用CodePen。通过 [this Hello World example code](http://codepen.io/gaearon/pen/rrpgNB?editors=0010)开始尝试。你不需要安装任何东西；你可以仅仅修改下代码然后看它是否生效。
 
-If you're just interested in playing around with React, you can use CodePen. Try starting from [this Hello World example code](http://codepen.io/gaearon/pen/rrpgNB?editors=0010). You don't need to install anything; you can just modify the code and see if it works.
+如果你喜欢用你自己的文本编辑器，你也可以<a href="https://facebook.github.io/react/downloads/single-file-example.html" download="hello.html">下载这个Html文件</a>，编辑它，并用你本地浏览器的文件系统打开。它需要短暂的时间进行代码转化，所以不要在生产环境下使用它。
 
-If you prefer to use your own text editor, you can also <a href="/react/downloads/single-file-example.html" download="hello.html">download this HTML file</a>, edit it, and open it from the local filesystem in your browser. It does a slow runtime code transformation, so don't use it in production.
+如果你想要在整个应用中都使用React，有两种主流的方式进行React起步：使用 Create React App，或者把它添加到现有的应用中。
 
-If you want to use it for a full application, there are two popular ways to get started with React: using Create React App, or adding it to an existing application.
 
-<block id="newapptab" role="tabpanel" class="newapp" />
+## 创建一个新的应用
 
-## Creating a New Application
-
-[Create React App](http://github.com/facebookincubator/create-react-app) is the best way to start building a new React single page application. It sets up your development environment so that you can use the latest JavaScript features, provides a nice developer experience, and optimizes your app for production.
+[Create React App](http://github.com/facebookincubator/create-react-app) 是开始构建一个React单页应用最好的方式。它设置好你了开发环境以便你能使用最新的js特性，提供了好的开发体验 provides a nice developer experience, and optimizes your app for production.
 
 ```bash
 npm install -g create-react-app
