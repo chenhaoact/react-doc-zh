@@ -15,7 +15,7 @@ React是一项灵活的技术，它能被应用到一系列的项目中. 你可�
 
 ## 创建一个新的应用
 
-[Create React App](http://github.com/facebookincubator/create-react-app) 是开始构建一个React单页应用最好的方式。它设置好你了开发环境以便你能使用最新的js特性，提供了好的开发体验 provides a nice developer experience, and optimizes your app for production.
+[Create React App](http://github.com/facebookincubator/create-react-app) 是开始构建一个React单页应用最好的方式。它设置好你的开发环境以便你能使用最新的js特性，并提供了好的开发体验，还为生产环境优化了你的应用。
 
 ```bash
 npm install -g create-react-app
@@ -25,15 +25,14 @@ cd my-app
 npm start
 ```
 
-Create React App doesn't handle backend logic or databases; it just creates a frontend build pipeline, so you can use it with any backend you want. It uses build tools like Babel and webpack under the hood, but works with zero configuration.
+创建React引用不需要处理后端的逻辑或者数据库；仅仅创建一个前端的构建管道，因此你可以用你想用的任何后端技术。Create React App使用像Babel 和 webpack这样的构建工具，但他不需要任何的配置就能工作。
 
-When you're ready to deploy to production, running `npm run build` will create an optimized build of your app in the `build` folder. You can learn more about Create React App [from its README](https://github.com/facebookincubator/create-react-app#create-react-app-) and the [User Guide](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#table-of-contents).
+当你准备好部署到生产环境时，运用 `npm run build` 将会在你应用的`build` 目录下创建一个压缩打包优化过的代码。 你可以了解到更多Create React App的细节： [通过它的 README](https://github.com/facebookincubator/create-react-app#create-react-app-) 和 [User Guide](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#table-of-contents).
 
-<block id="existingapptab" role="tabpanel" class="existingapp" />
 
-## Adding React to an Existing Application
+## 添加 React 到一个已有的应用
 
-You don't need to rewrite your app to start using React.
+你不需要为开始使用React重写你的应用。
 
 We recommend adding React to a small part of your application, such as an individual widget, so you can see if it works well for your use case.
 
@@ -129,96 +128,3 @@ The versions above are only meant for development, and are not suitable for prod
 To load a specific version of `react` and `react-dom`, replace `15` with the version number.
 
 If you use Bower, React is available via the `react` package.
-
-<script>
-/**
- * The code below is based on a snippet from React Native Getting Started page.
- */
-
-// Convert <div>...<span><block /></span>...</div>
-// Into <div>...<block />...</div>
-var blocks = document.getElementsByTagName('block');
-for (var i = 0; i < blocks.length; ++i) {
-  var block = blocks[i];
-  var span = blocks[i].parentNode;
-  var container = span.parentNode;
-  container.insertBefore(block, span);
-  container.removeChild(span);
-}
-// Convert <div>...<block />content<block />...</div>
-// Into <div>...<block>content</block><block />...</div>
-blocks = document.getElementsByTagName('block');
-for (var i = 0; i < blocks.length; ++i) {
-  var block = blocks[i];
-  while (block.nextSibling && block.nextSibling.tagName !== 'BLOCK') {
-    block.appendChild(block.nextSibling);
-  }
-}
-
-function setSelected(value){
-  var tabs = document.querySelectorAll('li[role="tab"]');
-  for (var i = 0; i < tabs.length; ++i) {
-    var tab = tabs[i];
-    if (tab.className === 'button-' + value) {
-      tabs[i].setAttribute('aria-selected', 'true');
-      tabs[i].setAttribute('tabindex', '0');
-    } else {
-      tabs[i].setAttribute('aria-selected', 'false');
-      tabs[i].setAttribute('tabindex', '-1');
-    }
-  }
-}
-
-function keyToggle(e, value, prevTab, nextTab){
-  if (e.keyCode === 37) {
-    document.getElementById(prevTab).focus();
-    display('target', prevTab);
-  }
-  if (e.keyCode === 39) {
-    document.getElementById(nextTab).focus();
-    display('target', nextTab);
-  }
-}
-
-function display(type, value) {
-  setSelected(value);
-  var container = document.getElementsByTagName('block')[0].parentNode;
-  container.className = 'display-' + type + '-' + value + ' ' +
-    container.className.replace(RegExp('display-' + type + '-[a-z]+ ?'), '');
-}
-
-// If we are coming to the page with a hash in it (i.e. from a search, for example), try to get
-// us as close as possible to the correct platform and dev os using the hashtag and block walk up.
-var foundHash = false;
-if (window.location.hash !== '' && window.location.hash !== 'content') { // content is default
-  // Hash links are added a bit later so we wait for them.
-  window.addEventListener('DOMContentLoaded', selectTabForHashLink);
-}
-
-function selectTabForHashLink() {
-  var hashLinks = document.querySelectorAll('a.hash-link');
-  for (var i = 0; i < hashLinks.length && !foundHash; ++i) {
-    if (hashLinks[i].hash === window.location.hash) {
-      var parent = hashLinks[i].parentElement;
-      while (parent) {
-        if (parent.tagName === 'BLOCK') {
-          var target = null;
-          if (parent.className.indexOf('fiddle') > -1) {
-            target = 'fiddle';
-          } else if (parent.className.indexOf('newapp') > -1) {
-            target = 'newapp';
-          } else if (parent.className.indexOf('existingapp') > -1) {
-            target = 'existingapp';
-          } else {
-            break; // assume we don't have anything.
-          }
-          display('target', target);
-          foundHash = true;
-          break;
-        }
-        parent = parent.parentElement;
-      }
-    }
-  }
-}
-</script>
