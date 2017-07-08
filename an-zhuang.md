@@ -68,9 +68,9 @@ Yarn 和 npm 都从 [npm registry](http://npmjs.com/)下载包。
 
 ### 启用ES6 和 JSX
 
-我们推荐使用 [Babel](http://babeljs.io/) 配合React 以便在你的js代码中支持 ES6 和 JSX. ES6 is a set of modern JavaScript features that make development easier, and JSX is an extension to the JavaScript language that works nicely with React.
+我们推荐使用 [Babel](http://babeljs.io/) 配合React 以便在你的js代码中支持 ES6 和 JSX。 ES6 集合一系列现代js的特性能够使开发更加简便高效， 而 JSX 则是js语法的扩展，它能够很好的配合React工作。
 
-The [Babel setup instructions](https://babeljs.io/docs/setup/) explain how to configure Babel in many different build environments. Make sure you install [`babel-preset-react`](http://babeljs.io/docs/plugins/preset-react/#basic-setup-with-the-cli-) and [`babel-preset-es2015`](http://babeljs.io/docs/plugins/preset-es2015/#basic-setup-with-the-cli-) and enable them in your [`.babelrc` configuration](http://babeljs.io/docs/usage/babelrc/), and you're good to go.
+[Babel setup instructions](https://babeljs.io/docs/setup/) explain how to configure Babel in many different build environments. Make sure you install [`babel-preset-react`](http://babeljs.io/docs/plugins/preset-react/#basic-setup-with-the-cli-) and [`babel-preset-es2015`](http://babeljs.io/docs/plugins/preset-es2015/#basic-setup-with-the-cli-) and enable them in your [`.babelrc` configuration](http://babeljs.io/docs/usage/babelrc/), and you're good to go.
 
 ### Hello World with ES6 and JSX
 
