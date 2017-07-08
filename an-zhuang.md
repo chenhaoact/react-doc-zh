@@ -34,41 +34,41 @@ npm start
 
 你不需要为开始使用React重写你的应用。
 
-We recommend adding React to a small part of your application, such as an individual widget, so you can see if it works well for your use case.
+我们推荐添加React为你应用的一小部分，像一个个人的插件，这样你就可以看它是否对你的用例运行良好。
 
-While React [can be used](/react/docs/react-without-es6.html) without a build pipeline, we recommend setting it up so you can be more productive. A modern build pipeline typically consists of:
+React也 [可以被使用](https://facebook.github.io/react/docs/react-without-es6.html) 不需要构建管道，我们推荐设置它是为了让你的应用能生产效率更高。 一个典型的现代构建工作流包括：
 
-* A **package manager**, such as [Yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/). It lets you take advantage of a vast ecosystem of third-party packages, and easily install or update them.
-* A **bundler**, such as [webpack](https://webpack.js.org/) or [Browserify](http://browserify.org/). It lets you write modular code and bundle it together into small packages to optimize load time.
-* A **compiler** such as [Babel](http://babeljs.io/). It lets you write modern JavaScript code that still works in older browsers.
+* 一个 **包管理工具**，如 [Yarn](https://yarnpkg.com/) 或 [npm](https://www.npmjs.com/)。它能让你利用第三方库的巨大生态系统，并便捷的安装和更新它们。
+* 一个 **打包工具**，如 [webpack](https://webpack.js.org/) 或 [Browserify](http://browserify.org/)。它能让你编写模块化的代码并把它们打包压缩以便优化加载时间。
+* 一个 **编译工具**，如 [Babel](http://babeljs.io/)。 它可以允许你写新版的js代码并仍然可以在旧的浏览器中运行。
 
-### Installing React
+### 安装 React
 
->**Note:**
+>**注意：**
 >
->Once installed, we strongly recommend setting up a [production build process](/react/docs/optimizing-performance.html#use-the-production-build) to ensure you're using the fast version of React in production.
+>一旦安装，我们就强烈建议设置 [生产构建流程](https://facebook.github.io/react/docs/optimizing-performance.html#use-the-production-build) 来确保你能在生产环境中使用最快版本的React。
 
-We recommend using [Yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/) for managing front-end dependencies. If you're new to package managers, the [Yarn documentation](https://yarnpkg.com/en/docs/getting-started) is a good place to get started.
+我们推荐使用[Yarn](https://yarnpkg.com/) 或 [npm](https://www.npmjs.com/) 来管理前端依赖。如果你是包管理工具的新手，[Yarn的文档](https://yarnpkg.com/en/docs/getting-started) 会对你的起步有所帮助。
 
-To install React with Yarn, run:
+用Yarn安装React，运行：
 
 ```bash
 yarn init
 yarn add react react-dom
 ```
 
-To install React with npm, run:
+用npm安装React，运行：
 
 ```bash
 npm init
 npm install --save react react-dom
 ```
 
-Both Yarn and npm download packages from the [npm registry](http://npmjs.com/).
+Yarn 和 npm 都从 [npm registry](http://npmjs.com/)下载包。
 
-### Enabling ES6 and JSX
+### 启用ES6 和 JSX
 
-We recommend using React with [Babel](http://babeljs.io/) to let you use ES6 and JSX in your JavaScript code. ES6 is a set of modern JavaScript features that make development easier, and JSX is an extension to the JavaScript language that works nicely with React.
+我们推荐使用 [Babel](http://babeljs.io/) 配合React 以便在你的js代码中支持 ES6 和 JSX. ES6 is a set of modern JavaScript features that make development easier, and JSX is an extension to the JavaScript language that works nicely with React.
 
 The [Babel setup instructions](https://babeljs.io/docs/setup/) explain how to configure Babel in many different build environments. Make sure you install [`babel-preset-react`](http://babeljs.io/docs/plugins/preset-react/#basic-setup-with-the-cli-) and [`babel-preset-es2015`](http://babeljs.io/docs/plugins/preset-es2015/#basic-setup-with-the-cli-) and enable them in your [`.babelrc` configuration](http://babeljs.io/docs/usage/babelrc/), and you're good to go.
 
